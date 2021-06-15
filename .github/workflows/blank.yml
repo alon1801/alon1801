@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="fe=edge">
+<style type="text/css">
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   font-family: Arial;
+   direction: rtl;
+   margin: 0;
+   padding: 0;
+   overflow-x: hidden; 
+   width: 100%;
+   background-image: url("https://cdn.pixabay.com/photo/2015/12/27/20/08/beach-1110347_960_720.jpg");
+   background-size: cover;
+   background-attachment: fixed;
+   background-position: center;
+} 
+
+nav {
+   width: 85%;
+   margin: auto;
+   min-height: 65px;
+   align-items: center;
+   box-shadow: 3px 3px 3px 3px black;
+   position: sticky;
+   top: 0;
+}
+
+nav ul {
+   list-style: none;
+   display: flex; 
+   justify-content: space-around;
+   align-items: center;
+}
+
+nav li a {
+   text-decoration: none;
+   font-size: 17px;
+   font-weight: bold;
+   font-family: italic;
+   color: #7d0c0c;
+   box-shadow: 1px 1px 1px 1px grey;
+   padding: 4px;
+   border-radius: 8px;
+   transition: 1s all; 
+   background-color: #fff873;
+}
+
+nav li a:hover {
+   color: #fff873;
+   background-color: #7d0c0c;
+}
+
+.three-icons {
+   display: none;
+}
+
+#h1-name {
+   text-align: center;
+   font-size: 68px;
+}
+
+.three-pics {
+   width: 85%;
+   height: 250px;
+   margin: auto;
+   display: flex;
+   justify-content: space-between;
+}
+
+.three-pics img {
+   box-shadow: 1px 1px 1px 1px black;
+   border-radius: 20px;
+}
+
+.about-us {
+   width: 80%;
+   margin: auto;
+   min-height: 300px;
+   background-color: rgba(255,255,255,0.5);
+   color: #7d0c0c;
+   border: 1px solid black;
+   text-align: center;
+   box-shadow: -5px 7px 24px black;
+   border-radius: 20px;
+}
+
+.about-us a {
+   text-decoration: none;
+   font-size: 20px;  
+   font-weight: bold;
+   transition: 1s all;
+}
+
+.about-us a:hover {
+   color: tomato;
+}
+
+#h1-menu {
+   text-align: center;
+   border: 1px solid black;
+   max-width: 25%;
+   margin: auto;
+   background-color: rgba(255,255,255,0.5);
+}
+
+.three-menus {
+   width: 95%;
+   margin: auto;
+   min-height: 300px;
+   display: flex;
+   justify-content: space-between;
+   font-family: italic;
+   text-align: center;
+   font-weight: bold;
+   font-size: 20px;
+   overflow-x: hidden;
+}
+
+.first-menu {
+   min-height: 300px;
+   width: 30%;
+   background-image: url("https://cdn.pixabay.com/photo/2016/06/20/13/44/paper-1468883_960_720.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   border: 1px solid black;
+   border-radius: 12px;
+   box-shadow: 1px 1px 1px grey;
+   padding: 2px;
+}
+
+.food-menu {
+   min-height: 300px;
+   width: 30%;
+   background-image: url("https://cdn.pixabay.com/photo/2017/10/22/21/02/food-2879265_960_720.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   border: 1px solid black;
+   border-radius: 12px;
+   box-shadow: 1px 1px 1px grey;
+   line-height: 140%;
+}
+
+.drink-menu {
+   min-height: 300px;
+   width: 30%;
+   background-image: url("https://cdn.pixabay.com/photo/2014/01/28/15/08/beer-253791_960_720.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   border: 1px solid black;
+   border-radius: 12px;
+   box-shadow: 1px 1px 1px grey;
+}
+
+#h1-gallery {
+   text-align: center;
+   border: 1px solid black;
+   max-width: 25%;
+   margin: auto;
+   background-color: rgba(255,255,255,0.5);
+}
+
+.gallery {
+   display: flex;
+   height: 100%;
+   flex-wrap: wrap;
+   align-content: flex-start;
+}
+
+.gallery>div {
+   max-width: 400px;
+   margin: auto;
+}
+
+.gallery>div img {
+   width: 100%;
+   height: 300px;
+   padding: 5px;
+   margin: 5px;
+   border: 2px solid white;
+   border-radius: 12px;
+} 
+
+.form {
+   width: 60%;
+   min-height: 400px;
+   margin: auto;
+   background-image: url("https://cdn.pixabay.com/photo/2013/02/21/19/06/drink-84533_960_720.jpg");
+   background-size: cover;
+   background-position: right; 
+   border-radius: 40px;
+   padding: 20px;
+   border: 1px solid black;
+   box-shadow: 1px 1px 1px 1px grey;
+}
+
+.form h1 {
+   border: 1px solid black;
+   max-width: 20%;
+   margin: auto; 
+   border-radius: 12px;
+   background-color: tomato;
+}
+
+.form table {
+   margin-right: 45%;
+}
+
+.form table td {
+   font-size: 24px;
+   font-weight: bold; 
+}
+   
+#btn {
+   font-size: 20px;
+   font-weight: bold;
+   background-color: yellow;
+   border-radius: 10px;   
+}   
+
+iframe { 
+   display: flex;
+   justify-content: center;  
+   width: 50%;
+   margin: auto;
+}
+
+footer {
+   width: 100%;
+   height: 80px;
+   background-color: black; 
+   display: flex;
+   align-items: center; 
+   text-align: center;
+   justify-content: center; 
+   color: white;
+}
+
+
+/* responsive for mobiles!!!!!!!!!!!!!!!!!!!! */
+
+@media screen and (max-width: 600px) {
+
+body {
+   background-position: right;
+}
+
+header {
+   margin-top: -18px;
+}
+
+nav {
+   width: 95%;	
+}
+
+nav ul {
+   padding: 0;
+}
+
+#social {
+   display: none;
+}
+
+.three-icons {
+   text-align: center;
+   display: block;
+}
+
+.three-pics {
+   height: 100px;
+}
+
+.three-pics img {
+   height: 100px;
+}  
+
+.about-us {
+   width: 99%;
+   margin: auto;
+   padding: 8px;
+}
+
+.three-menus {
+   display: block;
+}
+
+.first-menu {
+   width: 100%;
+}
+
+.food-menu {
+   width: 100%;
+   margin: auto;
+   margin-top: 12px;
+}
+
+.drink-menu {
+   width: 100%;
+   margin: auto;
+   margin-top: 12px;
+}
+ 
+.form {
+   width: 95%;
+   background-position: right;
+}
+
+.form h1 {
+   max-width: 40%;
+   padding: 5px;
+}
+
+.form table {
+   margin-right: 0;
+}
+
+.form table td {
+   font-size: 16px;
+   color: black;
+}
+ 
+#btn {
+   font-size: 15px;
+}   
+
+iframe {
+   min-width: 90%;
+}
+
+}
+
+
+/* responsive for tablet!!!!!!!!!!!!!!!!!!!! */
+
+@media screen and (max-width: 1000px) {
+
+.about-us {
+   width: 95%;
+}
+
+.three-pics {
+   width: 95%;
+}
+
+.gallery>div {
+   max-width: 600px;
+}
+
+.gallery>div img {
+   height: 400px;
+} 
+
+.form {
+   width: 70%;  
+}
+
+.form table {
+   margin-right: 10%;
+}
+
+iframe {
+   width: 70%;
+}
+
+
+
+
+}
+
+</style>
+<title>basta-bar-barak</title>
+</head>
+<body>
+<br>
+
+<nav>
+   
+   <ul>
+   <li><img src="C:\Users\alon_\Desktop\barak-logo.jpeg"
+   height="60px"></li>
+   
+      <li><a href="basta-bar-barak.html">דף הבית</a></li>
+	  <li><a href="#menu-nav">תפריט</a></li>
+	  <li><a href="#menu-gallery">גלריה</a></li>
+	  <li><a href="#menu-contact">צור קשר</a></li>
+   
+    <a id="social" href="tel:0523977807"><img src="https://cdn.pixabay.com/photo/2017/01/10/03/54/icon-1968244_960_720.png" height="40px"></a>
+    <a id="social" href="http://wa.me/972523977807"><img src="https://cdn.pixabay.com/photo/2015/08/03/13/58/soon-873316_960_720.png" height="40px"></a>
+	<a id="social" href="https://www.facebook.com/profile.php?id=100021886440123"><img src="https://cdn.pixabay.com/photo/2017/06/22/06/22/facebook-2429746_960_720.png" height="40px"></a>
+    </ul>
+</nav>
+
+<br>
+   <div class="three-icons">
+      <a href="tel:0523977807"><img src="https://cdn.pixabay.com/photo/2017/01/10/03/54/icon-1968244_960_720.png" height="40px"></a>
+      <a href="http://wa.me/972523977807"><img src="https://cdn.pixabay.com/photo/2015/08/03/13/58/soon-873316_960_720.png" height="40px"></a>
+	  <a href="https://www.facebook.com/profile.php?id=100021886440123"><img src="https://cdn.pixabay.com/photo/2017/06/22/06/22/facebook-2429746_960_720.png" height="40px"></a>
+   </div>
+<br>
+<h1 id="h1-name">Basta Bar Barak</h1>
+<h1 align="center">street food</h1>
+<br>
+<div class="three-pics">
+<img src="C:\Users\alon_\Desktop\basta\barak3.jpg"
+width="30%">
+<img src="https://media.easy.co.il/images/UserPics/10017532_1558174055784_5.jpg"
+width="30%">
+<img src="https://media.easy.co.il/images/UserPics/10017532_1557828595857.jpg"
+width="30%">
+
+</div>
+<br>
+<div class="about-us">
+   <hgroup>
+   <h2>ברוכים הבאים לבסטה בר ברק</h2>
+   <h2 style="font-family:italic">street food</h2>
+   <h3>אנחנו בר מדליק בסמטאות שוק הכרמל בלב תל אביב.</h3>
+   <h3>בסטה ששימשה בעבר למכירת ירקות שורש והפכה לבר שמח ומגניב.</h3>
+   <h3>אחד מבני המשפחה, ברק, הבחין בפונטציאל הגדול ויחד עם אחותו מירב הקימו את המקום מא' ועד ת'.</h3>
+   <h3>יש אצלנו אוכל, שתייה, מוסיקה טובה והמון שמחה ואהבה.</h3>
+   <h3>אז קפצו לבקר והתרשמו!</h3>
+   <h4>עשו עלינו גם כתבה ששווה לקרוא. כתבה מעכברוש העיר - בלוג הברים של תל אביב<img src="https://cdn.pixabay.com/photo/2013/07/13/01/21/award-155595_960_720.png" height="50" width="50" alt="bastabarbarak"/></h4>
+   <a href="https://cityrattelaviv.wordpress.com/2019/03/12/%D7%91%D7%A1%D7%98%D7%94-%D7%91%D7%A8-%D7%91%D7%A8%D7%A7-%D7%9C%D7%92%D7%9C%D7%95%D7%AA-%D7%93%D7%91%D7%A8%D7%99%D7%9D-%D7%97%D7%93%D7%A9%D7%99%D7%9D-%D7%91%D7%A9%D7%95%D7%A7-%D7%96%D7%94-%D7%AA/" target="_blank" alt="bastabarbarak">לחצו כאן לכתבה</a>
+   <h4>יש גם חוות דעת מרשימות באיזי, לחצו <a id="izi" href="https://easy.co.il/page/10017532" target="-blank">כאן</a> ללינק ישיר.</h4>
+   </hgroup>
+   <br id="menu-nav">
+  <br>
+</div>
+<br>
+<br>
+<h1 id="h1-menu">תפריט</h1><br>
+<div class="three-menus">
+   <div class="first-menu">
+      <h2>ראשונות</h2>
+	  <p>עלי גפן</p>
+	  <p>אדממה</p>
+	  <p>נאצ'וס</p>
+	  <p>לחוח עם ביצה - מוגש עם טחינה+רסק+זיתים+סחוג</p>
+	  <p>לחוח עם נוטלה</p>
+	  <p>לבנה עם סלוף - מוגש עם שמן זית וזעתר</p>
+	  <p>חומוס עם סלוף - מוגש רגיל\פטריות\שקשוקה</p>
+   
+   </div>
+
+   <div class="food-menu">
+      <h2>תפריט אוכל</h2>
+	  <p>פיצה - זיתים\פטריות\טונה\בצל\צ'ילי</p>
+	  <p>שניצלונים - מוגש עם טחינה קטשופ ומיונז</p>
+	  <p>פלטת טוגנים - סיגרים+נקניקיות</p>
+	  <p>+פסטלים+צ'יפס</p>
+	  <p>כריכים - טונה\חביתה\סלמון</p>
+	  <p>נקניקיה בלחמניה</p>
+	  <p>צ'יפס</p>
+   </div>
+   
+   <div class="drink-menu">
+      <h2>תפריט שתייה</h2>
+	  <h3>בירות מהחבית:</h3>
+	  <p>היינקו\גולדסטאר\מכבי79</p>
+	  <p>וויינשטפן\IPA\בלונד</p>
+	  <p>מיץ סחוט - תפוזים\גזר\תפו"ע</p>
+	  <p>גרניטה שרי\לימונענע</p>
+	  <p>קפה קר</p>
+	  <p>קפה חם ותה</p>
+	  <p>שתייה קלה</p>
+
+   </div>
+</div><br id="menu-gallery">
+<br>
+<br><br>
+<h1 id="h1-gallery">גלריה</h1><br>
+<div class="gallery">
+   <div><img src="C:\Users\alon_\Desktop\basta\barak1.jpeg"></div>
+   <div><img src="C:\Users\alon_\Desktop\basta\barak2.jpeg"></div>
+   <div><img src="https://media.easy.co.il/images/UserPics/10017532_1557828606342.jpg"></div>
+   <div><img src="C:\Users\alon_\Desktop\basta\barak4.jpeg"></div>
+   <div><img src="C:\Users\alon_\Desktop\basta\barak5.jpeg"></div>
+   <div><img src="C:\Users\alon_\Desktop\basta\barak6.jpeg"></div>
+   <div><img src="C:\Users\alon_\Desktop\basta\barak8.jpeg"></div>
+   <div><img src="C:\Users\alon_\Desktop\basta\barak9.jpeg"></div>
+   <div><img src="C:\Users\alon_\Desktop\basta\barak10.jpg"></div>
+   <div><img src="C:\Users\alon_\Desktop\basta\barak11.jpeg"></div>
+   <div><img src="C:\Users\alon_\Desktop\basta\barak12.jpeg"></div>
+   <div><img src="C:\Users\alon_\Desktop\basta\barak13.jpg"></div>
+   <div><img src="C:\Users\alon_\Desktop\basta\barak14.jpg"></div>
+   <div><img src="C:\Users\alon_\Desktop\basta\barak15.jpg"></div>
+   <div><img src="C:\Users\alon_\Desktop\basta\barak16.png"></div>
+   <div><img src="C:\Users\alon_\Desktop\basta\barak17.jpg"></div>
+   <div><img src="C:\Users\alon_\Desktop\basta\barak18.jpg"></div>
+   <div><img src="C:\Users\alon_\Desktop\basta\barak19.jpg"></div>
+</div>
+<br id="menu-contact">
+<br><br><br>
+<div class="form">
+<h1 align="center">צור קשר</h1>
+<form width="500px" method="post" action="mailto:alonzeevi123@gmail.com">
+<table>
+  <tr>
+    <td><label>שם מלא:</label></td>
+	<td><input type="text" name="fullName" id="input" required /></td>
+  </tr>
+   <br>
+   <tr>
+   <td><label>טלפון:</label></td>
+   <td><input type="tel" name="phone" id="input" required /></td>
+   </tr>
+   <br>
+   <tr>
+   <td><label>מייל:</label></td>
+   <td><input type="email" name="mail" id="input" required /></td>
+   </tr>
+   <br><br><br>
+   <tr>
+   <td>
+   <br>
+   <button id="btn" type="submit">שלחו</button>
+   </td>
+   </tr>
+</table>
+</form>
+</div><br><br>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.0161722036764!2d34.77055638481754!3d32.068811327063614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4c8474e16f53%3A0x5007b634adb1ddee!2z15nXldedINeY15XXkSAyNCwg16rXnCDXkNeR15nXkSDXmdek15U!5e0!3m2!1siw!2sil!4v1620911329680!5m2!1siw!2sil" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+<br><br>
+<footer>
+   <h4>כל הזכויות שמורות - אלון זאבי</h4>
+</footer>
+
+</body>
+
+</html>
