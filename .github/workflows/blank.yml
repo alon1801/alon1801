@@ -358,7 +358,7 @@ iframe {
 } 
 
 .form {
-   width: 70%;  
+   width: 80%;  
 }
 
 .form table {
